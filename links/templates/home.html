@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Exemplo de página HTML">
+        <title>Exemplo de HTML/CSS</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="{% static 'style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <img src="{% static 'logo.png' %}" id="logo" />
+            <h1>Hamburgueria de Teste</h1>
+            <h2>Venha provar os deliciosos sanduiches de Belo Horizonte. Siga nossas redes sociais!</h2>
+            <ul class="link-list">
+                {% for link in links %}
+                <li><a href="{{ link.url }}" target="_blank">{{ link.titulo }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="" class="signature">R&CSoftware 2021 @ Todos direitos resevados.</a>
+        </div>
+    </body>
+</html>
